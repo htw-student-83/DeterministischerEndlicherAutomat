@@ -4,5 +4,5 @@ public interface Idea {
 
     String getZustand();
 
-    void readSign();
+    void readSign(String zeichen);
 }
