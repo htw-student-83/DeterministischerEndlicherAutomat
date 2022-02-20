@@ -3,7 +3,7 @@ package dea;
 public class StateMachineListener implements IStateMachineListener {
 
     /**
-     * Gibt die Meldung aus, das sich der Automat im Startzustand befindet.
+     * Der Automat hat den Startzustand erreicht.
      */
     @Override
     public void startStateOfTheMachine() {
@@ -11,7 +11,7 @@ public class StateMachineListener implements IStateMachineListener {
     }
 
     /**
-     * Gibt die Meldung aus, das der Automat seinen Zustand gewechselt hat.
+     * Der Automat hat seinen Zustand geändert.
      */
     @Override
     public void currentStateOfTheMachine(DeaZustand state) {
@@ -20,7 +20,7 @@ public class StateMachineListener implements IStateMachineListener {
 
 
     /**
-     * Gibt die Meldung aus, das der Automat im Endzustand nun ist.
+     * Der Automat ist nun im Endzustand angekommen.
      */
     @Override
     public void finalStateOfTheMachine() {
