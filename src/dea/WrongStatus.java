@@ -1,6 +1,6 @@
 package dea;
 
-public class WrongStatus extends Throwable {
+public class WrongStatus extends Exception {
     public WrongStatus(){
         super();
     }

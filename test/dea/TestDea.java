@@ -14,7 +14,7 @@ public class TestDea {
      * prüft, ob sich der Automat zu Beginn im Startzustand befindet
      */
     @Test
-    public void goodtest1(){
+    public void goodtest1()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.getZustand();
@@ -26,7 +26,7 @@ public class TestDea {
      * prüft, ob der Automat vor dem Starten ein Zeichen einliest
      */
     @Test(expected = WrongStatus.class)
-    public void failedTest1(){
+    public void failedTest1()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.readSign("A");
     }
@@ -36,7 +36,7 @@ public class TestDea {
      * prüft die Reakton des Automaten im Falle, dass es ein falsches Zeichen einließt
      */
     @Test(expected = WrongSign.class)
-    public void failedTest2(){
+    public void failedTest2() throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.readSign("C");
@@ -48,7 +48,7 @@ public class TestDea {
      * ein falsches einließt
      */
     @Test(expected = WrongSign.class)
-    public void failedTest3(){
+    public void failedTest3() throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.readSign("A");
@@ -64,7 +64,7 @@ public class TestDea {
      *
      * */
     @Test
-    public void goodTest2(){
+    public void goodTest2()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.readSign("A");
@@ -77,12 +77,12 @@ public class TestDea {
      * prüft, ob der Automat im Startzustand ein Zeichen einließt und in den Endzustand wechselt
      */
     @Test
-    public void goodTest3(){
+    public void goodTest3()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.readSign("B");
         idea.readSign("0");
-        String zustand = idea.getZustand();
+        DeaZustand zustand = idea.getZustand();
         Assert.assertEquals(zustand, DeaZustand.Endzustand);
     }
 
@@ -92,7 +92,7 @@ public class TestDea {
      * weitere Zeichen einliest und im gleichen Zustand verbleibt
      */
     @Test
-    public void goodTest4(){
+    public void goodTest4()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.readSign("B");
@@ -100,7 +100,7 @@ public class TestDea {
         idea.readSign("B");
         idea.readSign("B");
         idea.readSign("C");
-        String zustand = idea.getZustand();
+        DeaZustand zustand = idea.getZustand();
         Assert.assertEquals(zustand, DeaZustand.Endzustand);
     }
 
@@ -110,7 +110,7 @@ public class TestDea {
      * und am Ende im Endzustand ist
      */
     @Test
-    public void goodTest5(){
+    public void goodTest5()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
         idea.readSign("A");
@@ -119,7 +119,7 @@ public class TestDea {
         idea.readSign("B");
         idea.readSign("B");
         idea.readSign("C");
-        String zustand = idea.getZustand();
+        DeaZustand zustand = idea.getZustand();
         Assert.assertEquals(zustand, DeaZustand.Endzustand);
     }
 }

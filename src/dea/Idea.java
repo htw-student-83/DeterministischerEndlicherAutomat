@@ -2,9 +2,9 @@ package dea;
 
 public interface Idea {
 
-    String getZustand();
+    DeaZustand getZustand();
 
-    void readSign(String zeichen);
+    void readSign(String zeichen)throws Exception;
 
-    String getStart();
+    DeaZustand getStart();
 }
