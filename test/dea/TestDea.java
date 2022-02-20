@@ -17,7 +17,6 @@ public class TestDea {
     public void goodtest1()throws Exception{
         Idea idea = this.toGetAnObjekt();
         idea.getStart();
-        idea.getZustand();
         Assert.assertEquals(DeaZustand.Startzustand, idea.getZustand());
     }
 
