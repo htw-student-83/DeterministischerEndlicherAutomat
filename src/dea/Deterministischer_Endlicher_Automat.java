@@ -4,11 +4,6 @@ public class Deterministischer_Endlicher_Automat implements Idea {
 
     private DeaZustand currentStatus = null;
 
-
-    /**
-     * Zu Beginn wird der Automat in den Startzustand gebracht, worüber ein Listener-Objekt informiert wird.
-     * @return currentStatus
-     */
     @Override
     public DeaZustand getStart() {
         IStateMachineListener stateMachineListener = new StateMachineListener();
@@ -17,32 +12,17 @@ public class Deterministischer_Endlicher_Automat implements Idea {
         return this.currentStatus;
     }
 
-
-    /**
-     * Verändert nach dem Einlesen eines gültigen Zeichens den Zustand.
-     * @param zustand
-     */
     @Override
     public void setStatus(DeaZustand zustand){
         this.currentStatus = zustand;
     }
 
 
-    /**
-     * Gibt den aktuellen Zustand wieder, in dem sich der Automat befindet.
-     * @return currentStatus
-     */
     @Override
     public DeaZustand getZustand() {
         return this.currentStatus;
     }
 
-
-    /**
-     * Wechsel des Zustandes unter der Prüfung der Eingabe eines Zeichens.
-     * @param zeichen
-     * @throws Exception
-     */
     @Override
     public void readSign(String zeichen)throws Exception{
         IStateMachineListener stateMachineListener = new StateMachineListener();
